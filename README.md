@@ -30,6 +30,7 @@ int _printf(const char *format, ...)
 | [`print_buffer.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_buffer.c) | Buffered output: `pb_putc` / `pb_flush` (buffer 1024 bytes, minimal `write` calls) |
 | [`print_char_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_char_handler.c) | Handler for `%c` |
 | [`print_string_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_string_handler.c) | Handler for `%s` |
+| [`print_S_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_S_handler.c) | Custom handler for `%S` (string with non-printables as `\\xHH`) |
 | [`print_percent_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_percent_handler.c) | Handler for `%%` |
 | [`print_int_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_int_handler.c) | Handler for `%d` and `%i` |
 | [`functions_binary.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/functions_binary.c) | Handler for custom `%b` conversion (binary) |
@@ -60,6 +61,7 @@ Here is a table whith the list of conversion specifiers, their meaning and an ex
 | [`print_octal`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned octal | `%o` | _printf("%o", 8) | `10` |
 | [`print_hex_lower`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned hex (lowercase) | `%x` | _printf("%x", 255) | `ff` |
 | [`print_hex_upper`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned hex (uppercase) | `%X` | _printf("%X", 255) | `FF` |
+| [`print_string_custom_S`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_S_handler.c)| Prints a string; non-printables as `\\x` + 2 hex digits (uppercase) | `%S` | _printf("%S\n", "Best\nSchool") | `Best\x0ASchool` |
 
 **Note:** `_printf` supports the specifiers above. The sample `main.c` below also calls `printf` with `%p` and `%r`; those conversions are **not** implemented in this `_printf` (output may differ from `printf` for those lines).
 
@@ -204,6 +206,14 @@ Handle the following conversion specifiers:
 - You don’t have to handle field width
 - You don’t have to handle precision
 - You don’t have to handle the length modifiers
+
+----------------------------
+### [6. My Weakness Is Wearing Too Much Leopard Print](https://github.com/ali-jin/holbertonschool-printf)
+Handle the following custom conversion specifier:
+
+- `S` : prints the string. Non-printable characters (`0 < ASCII value < 32` or `>= 127`) are printed as `\x` followed by the ASCII code in **uppercase** hexadecimal (**always 2** characters).
+
+Example: `_printf("%S\n", "Best\nSchool");` → `Best\x0ASchool` (then newline from the format).
 
 ----------------------------
 

@@ -45,5 +45,6 @@ int print_unsigned(va_list ap, print_buffer_t *pb);
 int print_octal(va_list ap, print_buffer_t *pb);
 int print_hex_lower(va_list ap, print_buffer_t *pb);
 int print_hex_upper(va_list ap, print_buffer_t *pb);
+int print_string_custom_S(va_list ap, print_buffer_t *pb);
 
 #endif

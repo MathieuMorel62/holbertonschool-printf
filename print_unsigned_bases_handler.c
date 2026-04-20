@@ -77,7 +77,7 @@ int print_octal(va_list ap)
  *
  * Return: number of characters printed
  */
-int print_hex(va_list ap, const char *digits)
+static int print_hex(va_list ap, const char *digits)
 {
 	unsigned int n;
 	char buf[16];

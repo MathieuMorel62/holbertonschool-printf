@@ -28,5 +28,10 @@ int print_pct(va_list ap);
 int print_int(va_list ap);
 int convert_binary(va_list ap);
 int (*get_function(const char *format))(va_list);
+int print_unsigned(va_list ap);
+int print_octal(va_list ap);
+int print_hex(va_list ap, const char *digits);
+int print_hex_lower(va_list ap);
+int print_hex_upper(va_list ap);
 
 #endif

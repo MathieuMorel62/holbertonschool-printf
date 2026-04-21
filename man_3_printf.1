@@ -24,9 +24,9 @@ A conversion specification is introduced by
 followed immediately by a single conversion character (for example
 .BR %s ", " %u ).
 Unknown specifiers are printed literally (for example
-.B %p
+.B %r
 prints the characters
-.B %p
+.B %r
 without consuming an argument).
 
 .B SUPPORTED CONVERSIONS
@@ -101,6 +101,15 @@ The
 argument is converted to unsigned hexadecimal notation using uppercase letters
 .BR ABCDEF .
 
+.TP
+.BR p
+The
+.B "void *"
+argument is converted to a hexadecimal memory address with
+.B 0x
+prefix and lowercase hexadecimal digits. A null pointer is printed as
+.BR 0x0 .
+
 .SH RETURN VALUE
 Upon successful return, these functions return the number of
 characters printed (excluding the null byte used to end output to
@@ -142,6 +151,13 @@ Custom string with escaped non-printables (\fB%S\fP):
 .nf
 #include "main.h"
 _printf("%S\\n", "Best\\nSchool");
+.RE
+
+Pointer address with \fB%p\fP:
+.RS
+.nf
+#include "main.h"
+_printf("Address: %p\\n", ptr);
 .RE
 
 .SH AUTHOR

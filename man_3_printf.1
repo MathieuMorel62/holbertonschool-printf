@@ -11,10 +11,19 @@ The function writes output to stdout, the standard output stream, under the cont
 
 This implementation supports the conversion specifiers listed in
 .BR "SUPPORTED CONVERSIONS" .
-Flag characters, field width, precision, and length modifiers are
+Field width, precision, and length modifiers are
 .B not
-supported; each conversion is a single character after the percent sign (for example
-.BR %d ", " %x ", " %% ).
+supported. The flag characters
+.BR + ", " space ", and " #
+are partially supported for non-custom conversions in this project:
+.BR + " and " space
+for
+.BR d ", " i ,
+and
+.B #
+for
+.BR o ", " x ", and " X .
+Each conversion is parsed as flags followed by a single conversion character.
 
 .B Format of the format string
 .PP
@@ -35,6 +44,13 @@ without consuming an argument).
 The
 .B int
 argument is converted to signed decimal notation.
+For non-negative values, flag
+.B +
+prints a leading plus sign and flag
+.B space
+prints one leading space when
+.B +
+is not present.
 
 .TP
 .BR c
@@ -86,6 +102,11 @@ argument is converted to unsigned decimal notation.
 The
 .B "unsigned int"
 argument is converted to unsigned octal notation.
+With flag
+.BR # ,
+a leading
+.B 0
+is added when the value is non-zero.
 
 .TP
 .BR x
@@ -93,6 +114,11 @@ The
 .B "unsigned int"
 argument is converted to unsigned hexadecimal notation using lowercase letters
 .B abcdef .
+With flag
+.BR # ,
+prefix
+.B 0x
+is added when the value is non-zero.
 
 .TP
 .BR X
@@ -100,6 +126,11 @@ The
 .B "unsigned int"
 argument is converted to unsigned hexadecimal notation using uppercase letters
 .BR ABCDEF .
+With flag
+.BR # ,
+prefix
+.B 0X
+is added when the value is non-zero.
 
 .TP
 .BR p

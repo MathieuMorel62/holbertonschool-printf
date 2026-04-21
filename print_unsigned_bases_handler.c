@@ -9,12 +9,12 @@
  */
 int print_unsigned(va_list ap, print_buffer_t *pb)
 {
-	unsigned int n;
-	unsigned int divisor;
-	unsigned int digit;
+	unsigned long n;
+	unsigned long divisor;
+	unsigned long digit;
 	int result;
 
-	n = va_arg(ap, unsigned int);
+	n = get_unsigned_value_from_args(ap, pb);
 	divisor = 1;
 	result = 0;
 
@@ -51,14 +51,14 @@ int print_unsigned(va_list ap, print_buffer_t *pb)
  */
 int print_octal(va_list ap, print_buffer_t *pb)
 {
-	unsigned int n;
-	unsigned int original_value;
+	unsigned long n;
+	unsigned long original_value;
 	char buf[32];
 	int size;
 	int len_digits;
 	int len_prefix;
 
-	n = va_arg(ap, unsigned int);
+	n = get_unsigned_value_from_args(ap, pb);
 	original_value = n;
 	size = 0;
 
@@ -98,14 +98,14 @@ int print_octal(va_list ap, print_buffer_t *pb)
  */
 static int print_hex(va_list ap, const char *digits, print_buffer_t *pb)
 {
-	unsigned int n;
-	unsigned int original_value;
+	unsigned long n;
+	unsigned long original_value;
 	char buf[16];
 	int size;
 	int len_digits;
 	int len_prefix;
 
-	n = va_arg(ap, unsigned int);
+	n = get_unsigned_value_from_args(ap, pb);
 	original_value = n;
 	size = 0;
 

@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 /**
  * struct print_buffer - local output buffer for _printf
@@ -46,5 +47,6 @@ int print_octal(va_list ap, print_buffer_t *pb);
 int print_hex_lower(va_list ap, print_buffer_t *pb);
 int print_hex_upper(va_list ap, print_buffer_t *pb);
 int print_string_custom_S(va_list ap, print_buffer_t *pb);
+int print_pointer(va_list ap, print_buffer_t *pb);
 
 #endif

@@ -30,7 +30,8 @@ int write_reversed_buffer(print_buffer_t *pb, char *buf, int size)
  *
  * Return: prefix length, 0 when not printed, or -1 on error
  */
-int write_hex_prefix_if_needed(print_buffer_t *pb, unsigned int original_value)
+int write_hex_prefix_if_needed(print_buffer_t *pb,
+	unsigned long original_value)
 {
 	if (pb->flag_hash != 1 || original_value == 0)
 		return (0);
@@ -47,4 +48,26 @@ int write_hex_prefix_if_needed(print_buffer_t *pb, unsigned int original_value)
 		return (2);
 	}
 	return (0);
+}
+
+/**
+ * get_unsigned_value_from_args - read unsigned val with optional h/l modifier
+ * @ap: argument list
+ * @pb: formatting state
+ *
+ * Return: unsigned value converted according to length modifier
+ */
+unsigned long get_unsigned_value_from_args(va_list ap, print_buffer_t *pb)
+{
+	unsigned long value;
+
+	if (pb->length_modifier == 'l')
+		value = va_arg(ap, unsigned long);
+	else
+	{
+		value = (unsigned long)va_arg(ap, unsigned int);
+		if (pb->length_modifier == 'h')
+			value = (unsigned long)((unsigned short)value);
+	}
+	return (value);
 }

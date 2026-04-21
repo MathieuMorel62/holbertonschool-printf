@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 | [`print_int_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_int_handler.c) | Handler for `%d` and `%i` |
 | [`functions_binary.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/functions_binary.c) | Handler for custom `%b` conversion (binary) |
 | [`print_unsigned_bases_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c) | Handlers for `%u`, `%o`, `%x`, and `%X` (unsigned decimal, octal, hexadecimal) |
+| [`print_bases_helpers.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_bases_helpers.c) | Shared helpers for `%o`, `%x`, `%X`, and `#` prefix output |
 | [`man_3_printf.1`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/man_3_printf.1)| Man page for _printf function |
 
 ## Compilation
@@ -270,6 +271,19 @@ Handle the following conversion specifier:
 - You don’t have to handle field width
 - You don’t have to handle precision
 - You don’t have to handle the length modifiers
+
+----------------------------
+### [8. The Big Print Gives And The Small Print Takes Away](https://github.com/MathieuMorel62/holbertonschool-printf/tree/main)
+Handle the following flag characters for non-custom conversion specifiers:
+
+- `+`
+- `space`
+- `#`
+
+Current behavior in this project:
+
+- `+` and `space` are handled for `%d` and `%i`
+- `#` is handled for `%o`, `%x`, and `%X`
 
 ----------------------------
 

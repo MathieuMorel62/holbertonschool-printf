@@ -23,19 +23,20 @@ int _printf(const char *format, ...)
 ## Files Usage
 | File Name | Description |
 |:----------:|:----------:|
-|[`_printf.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/_printf.c) | Contains main body of our code that uses loops and if statements in order to execute the functions |
-| [`get_function.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/get_function.c) | The get_function file is used to handle the array     containing all the format specifiers used.|
-| [`main.h`](https://github.com/ali-jin/holbertonschool-printf/blob/main/main.h) | The main.h contain all our the prototypes used as well as containing our struct and the standard libraries used. |
-| [`io_putchar.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/io_putchar.c) | Contains `_putchar`, direct `write(1, …, 1)` helper (optional / tests) |
-| [`print_buffer.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_buffer.c) | Buffered output: `pb_putc` / `pb_flush` (buffer 1024 bytes, minimal `write` calls) |
-| [`print_char_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_char_handler.c) | Handler for `%c` |
-| [`print_string_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_string_handler.c) | Handler for `%s` |
-| [`print_S_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_S_handler.c) | Custom handler for `%S` (string with non-printables as `\\xHH`) |
-| [`print_percent_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_percent_handler.c) | Handler for `%%` |
-| [`print_int_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_int_handler.c) | Handler for `%d` and `%i` |
-| [`functions_binary.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/functions_binary.c) | Handler for custom `%b` conversion (binary) |
-| [`print_unsigned_bases_handler.c`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c) | Handlers for `%u`, `%o`, `%x`, and `%X` (unsigned decimal, octal, hexadecimal) |
-| [`man_3_printf.1`](https://github.com/ali-jin/holbertonschool-printf/blob/main/man_3_printf.1)| Man page for _printf function |
+|[`_printf.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/_printf.c) | Contains main body of our code that uses loops and if statements in order to execute the functions |
+| [`get_function.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/get_function.c) | The get_function file is used to handle the array     containing all the format specifiers used.|
+| [`main.h`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/main.h) | The main.h contain all our the prototypes used as well as containing our struct and the standard libraries used. |
+| [`io_putchar.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/io_putchar.c) | Contains `_putchar`, direct `write(1, …, 1)` helper (optional / tests) |
+| [`print_buffer.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_buffer.c) | Buffered output: `pb_putc` / `pb_flush` (buffer 1024 bytes, minimal `write` calls) |
+| [`print_char_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_char_handler.c) | Handler for `%c` |
+| [`print_string_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_string_handler.c) | Handler for `%s` |
+| [`print_S_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_S_handler.c) | Custom handler for `%S` (string with non-printables as `\\xHH`) |
+| [`print_pointer_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_pointer_handler.c) | Handler for `%p` (pointer address with `0x` prefix) |
+| [`print_percent_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_percent_handler.c) | Handler for `%%` |
+| [`print_int_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_int_handler.c) | Handler for `%d` and `%i` |
+| [`functions_binary.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/functions_binary.c) | Handler for custom `%b` conversion (binary) |
+| [`print_unsigned_bases_handler.c`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c) | Handlers for `%u`, `%o`, `%x`, and `%X` (unsigned decimal, octal, hexadecimal) |
+| [`man_3_printf.1`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/man_3_printf.1)| Man page for _printf function |
 
 ## Compilation
 Your code will be compiled this way:
@@ -52,18 +53,19 @@ Here is a table whith the list of conversion specifiers, their meaning and an ex
 
 | Function Name | Description | Format | Example | Output |
 |:-------------:|:-----------:|:------:|:--------:|:------:|
-| [`print_char`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_char_handler.c)| Prints a single character | `%c` | _printf("%c", M) | `M` |
-| [`print_string`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_string_handler.c)| Prints a string of characters | `%s`| _printf("%s", HolbertonSchool) | `HolbertonSchool` |
-| [`print_pct`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_percent_handler.c)| Prints a % | `%%` | _printf("%%") | `%` |
-| [`print_int`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_int_handler.c)| Prints decimal integer | `%d or %i`| _printf("%d", 21)| `21`|
-| [`convert_binary`](https://github.com/ali-jin/holbertonschool-printf/blob/main/functions_binary.c)| Prints unsigned integer in binary | `%b` | _printf("%b", 5) | `101` |
-| [`print_unsigned`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned decimal | `%u` | _printf("%u", 42) | `42` |
-| [`print_octal`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned octal | `%o` | _printf("%o", 8) | `10` |
-| [`print_hex_lower`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned hex (lowercase) | `%x` | _printf("%x", 255) | `ff` |
-| [`print_hex_upper`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned hex (uppercase) | `%X` | _printf("%X", 255) | `FF` |
-| [`print_string_custom_S`](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_S_handler.c)| Prints a string; non-printables as `\\x` + 2 hex digits (uppercase) | `%S` | _printf("%S\n", "Best\nSchool") | `Best\x0ASchool` |
+| [`print_char`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_char_handler.c)| Prints a single character | `%c` | _printf("%c", M) | `M` |
+| [`print_string`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_string_handler.c)| Prints a string of characters | `%s`| _printf("%s", HolbertonSchool) | `HolbertonSchool` |
+| [`print_pct`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_percent_handler.c)| Prints a % | `%%` | _printf("%%") | `%` |
+| [`print_int`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_int_handler.c)| Prints decimal integer | `%d or %i`| _printf("%d", 21)| `21`|
+| [`convert_binary`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/functions_binary.c)| Prints unsigned integer in binary | `%b` | _printf("%b", 5) | `101` |
+| [`print_unsigned`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned decimal | `%u` | _printf("%u", 42) | `42` |
+| [`print_octal`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned octal | `%o` | _printf("%o", 8) | `10` |
+| [`print_hex_lower`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned hex (lowercase) | `%x` | _printf("%x", 255) | `ff` |
+| [`print_hex_upper`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_unsigned_bases_handler.c)| Prints unsigned hex (uppercase) | `%X` | _printf("%X", 255) | `FF` |
+| [`print_string_custom_S`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_S_handler.c)| Prints a string; non-printables as `\\x` + 2 hex digits (uppercase) | `%S` | _printf("%S\n", "Best\nSchool") | `Best\x0ASchool` |
+| [`print_pointer`](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_pointer_handler.c)| Prints pointer address in hexadecimal with `0x` prefix | `%p` | _printf("%p", addr) | `0x7ffe637541f0` |
 
-**Note:** `_printf` supports the specifiers above. The sample `main.c` below also calls `printf` with `%p` and `%r`; those conversions are **not** implemented in this `_printf` (output may differ from `printf` for those lines).
+**Note:** `_printf` supports the specifiers above. The sample `main.c` below also calls `printf` with `%r`; this conversion is **not** implemented in this `_printf` (output may differ from `printf` for that line).
 
 ## Testing Program
 To test the program, you can create a `main.c` file and add the code below.
@@ -74,43 +76,74 @@ To test the program, you can create a `main.c` file and add the code below.
     #include "main.h"
 
     /**
+    * print_samples_part1 - first half of _printf vs printf checks
+    */
+    static void print_samples_part1(void)
+    {
+        int len;
+        int len2;
+        unsigned int ui;
+
+        printf("--------------------------------------------------------\n");
+        len = _printf("Let's try to printf a simple sentence.\n");
+        len2 = printf("Let's try to printf a simple sentence.\n");
+        printf("--------------------------------------------------------\n");
+        ui = (unsigned int)INT_MAX + 1024;
+        _printf("Length:[%d, %i]\n", len, len);
+        printf("Length:[%d, %i]\n", len2, len2);
+        printf("--------------------------------------------------------\n");
+        _printf("Negative:[%d]\n", -762534);
+        printf("Negative:[%d]\n", -762534);
+        printf("--------------------------------------------------------\n");
+        _printf("Unsigned:[%u]\n", ui);
+        printf("Unsigned:[%u]\n", ui);
+        printf("--------------------------------------------------------\n");
+        _printf("Unsigned octal:[%o]\n", ui);
+        printf("Unsigned octal:[%o]\n", ui);
+        printf("--------------------------------------------------------\n");
+        _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+        printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    }
+
+    /**
+    * print_samples_part2 - second half of _printf vs printf checks
+    */
+    static void print_samples_part2(void)
+    {
+        int len;
+        int len2;
+        void *addr;
+
+        addr = (void *)0x7ffe637541f0;
+        printf("--------------------------------------------------------\n");
+        _printf("Character:[%c]\n", 'H');
+        printf("Character:[%c]\n", 'H');
+        printf("--------------------------------------------------------\n");
+        _printf("String:[%s]\n", "I am a string !");
+        printf("String:[%s]\n", "I am a string !");
+        printf("--------------------------------------------------------\n");
+        _printf("Address:[%p]\n", addr);
+        printf("Address:[%p]\n", addr);
+        printf("--------------------------------------------------------\n");
+        len = _printf("Percent:[%%]\n");
+        len2 = printf("Percent:[%%]\n");
+        printf("--------------------------------------------------------\n");
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+        printf("--------------------------------------------------------\n");
+        _printf("Unknown:[%r]\n");
+        printf("Unknown:[%r]\n");
+    }
+
+    /**
     * main - Entry point
     *
     * Return: Always 0
     */
     int main(void)
     {
-        int len;
-        int len2;
-        unsigned int ui;
-        void *addr;
-
-        len = _printf("Let's try to printf a simple sentence.\n");
-        len2 = printf("Let's try to printf a simple sentence.\n");
-        ui = (unsigned int)INT_MAX + 1024;
-        addr = (void *)0x7ffe637541f0;
-        _printf("Length:[%d, %i]\n", len, len);
-        printf("Length:[%d, %i]\n", len2, len2);
-        _printf("Negative:[%d]\n", -762534);
-        printf("Negative:[%d]\n", -762534);
-        _printf("Unsigned:[%u]\n", ui);
-        printf("Unsigned:[%u]\n", ui);
-        _printf("Unsigned octal:[%o]\n", ui);
-        printf("Unsigned octal:[%o]\n", ui);
-        _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-        printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-        _printf("Character:[%c]\n", 'H');
-        printf("Character:[%c]\n", 'H');
-        _printf("String:[%s]\n", "I am a string !");
-        printf("String:[%s]\n", "I am a string !");
-        _printf("Address:[%p]\n", addr);
-        printf("Address:[%p]\n", addr);
-        len = _printf("Percent:[%%]\n");
-        len2 = printf("Percent:[%%]\n");
-        _printf("Len:[%d]\n", len);
-        printf("Len:[%d]\n", len2);
-        _printf("Unknown:[%r]\n");
-        printf("Unknown:[%r]\n");
+        print_samples_part1();
+        print_samples_part2();
         return (0);
     }
  ```
@@ -121,28 +154,40 @@ At the exit, the program must display this.
 ```c
     alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
     alex@ubuntu:~/c/printf$ ./printf
+    --------------------------------------------------------
     Let's try to printf a simple sentence.
     Let's try to printf a simple sentence.
+    --------------------------------------------------------
     Length:[39, 39]
     Length:[39, 39]
+    --------------------------------------------------------
     Negative:[-762534]
     Negative:[-762534]
+    --------------------------------------------------------
     Unsigned:[2147484671]
     Unsigned:[2147484671]
+    --------------------------------------------------------
     Unsigned octal:[20000001777]
     Unsigned octal:[20000001777]
+    --------------------------------------------------------
     Unsigned hexadecimal:[800003ff, 800003FF]
     Unsigned hexadecimal:[800003ff, 800003FF]
+    --------------------------------------------------------
     Character:[H]
     Character:[H]
+    --------------------------------------------------------
     String:[I am a string !]
     String:[I am a string !]
+    --------------------------------------------------------
     Address:[0x7ffe637541f0]
     Address:[0x7ffe637541f0]
+    --------------------------------------------------------
     Percent:[%]
     Percent:[%]
+    --------------------------------------------------------
     Len:[12]
     Len:[12]
+    --------------------------------------------------------
     Unknown:[%r]
     Unknown:[%r]
     alex@ubuntu:~/c/printf$
@@ -151,12 +196,12 @@ At the exit, the program must display this.
 
 ## Flowchart
 
-![Flowchart](https://github.com/ali-jin/holbertonschool-printf/blob/main/Diagramme%20sans%20nom.drawio.svg)
+![Flowchart](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/Diagramme%20sans%20nom.drawio.svg)
 
 -------------------------
 ## Task To Realize The Project
 
-### [0. I'm Not Going Anywhere. You Can Print That Wherever You Want To. I'm Here And I'm a Spur For Life](https://github.com/ali-jin/holbertonschool-printf)
+### [0. I'm Not Going Anywhere. You Can Print That Wherever You Want To. I'm Here And I'm a Spur For Life](https://github.com/MathieuMorel62/holbertonschool-printf/tree/main)
 Write a function that produces output according to a format.
 
 - Prototype: int _printf(const char *format, ...);
@@ -173,7 +218,7 @@ Write a function that produces output according to a format.
 - You don’t have to handle the length modifiers
 
 -----------------------------
-### [1. Education Is When You Read The Fine Print. Experience Is What You Get If You Don't](https://github.com/ali-jin/holbertonschool-printf/blob/main/print_int_handler.c)
+### [1. Education Is When You Read The Fine Print. Experience Is What You Get If You Don't](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/print_int_handler.c)
 Handle the following conversion specifiers:
 
 - `d`
@@ -184,7 +229,7 @@ Handle the following conversion specifiers:
 - You don’t have to handle the length modifiers
 
 ----------------------------
-### [2. Just Because It's In Print Doesn't Mean It's The Gospel](https://github.com/ali-jin/holbertonschool-printf/blob/main/man_3_printf.1)
+### [2. Just Because It's In Print Doesn't Mean It's The Gospel](https://github.com/MathieuMorel62/holbertonschool-printf/blob/main/man_3_printf.1)
 - Create a man page for your function.
 
 ----------------------------
@@ -194,7 +239,7 @@ Handle the following custom conversion specifiers:
 - `b` : the unsigned int argument is converted to binary
 
 ----------------------------
-### [4. What One Has Not Experienced, One Will Never Understand In Print](https://github.com/ali-jin/holbertonschool-printf)
+### [4. What One Has Not Experienced, One Will Never Understand In Print](https://github.com/MathieuMorel62/holbertonschool-printf/tree/main)
 Handle the following conversion specifiers:
 
 - `u` (unsigned decimal)
@@ -208,12 +253,23 @@ Handle the following conversion specifiers:
 - You don’t have to handle the length modifiers
 
 ----------------------------
-### [6. My Weakness Is Wearing Too Much Leopard Print](https://github.com/ali-jin/holbertonschool-printf)
+### [6. My Weakness Is Wearing Too Much Leopard Print](https://github.com/MathieuMorel62/holbertonschool-printf/tree/main)
 Handle the following custom conversion specifier:
 
 - `S` : prints the string. Non-printable characters (`0 < ASCII value < 32` or `>= 127`) are printed as `\x` followed by the ASCII code in **uppercase** hexadecimal (**always 2** characters).
 
 Example: `_printf("%S\n", "Best\nSchool");` → `Best\x0ASchool` (then newline from the format).
+
+----------------------------
+### [7. How Is The World Ruled And Led To War? Diplomats Lie To Journalists And Believe These Lies When They See Them In Print](https://github.com/MathieuMorel62/holbertonschool-printf/tree/main)
+Handle the following conversion specifier:
+
+- `p` : prints a pointer address in hexadecimal format with `0x` prefix.
+
+- You don’t have to handle the flag characters
+- You don’t have to handle field width
+- You don’t have to handle precision
+- You don’t have to handle the length modifiers
 
 ----------------------------
 

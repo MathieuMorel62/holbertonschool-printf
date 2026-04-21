@@ -16,6 +16,10 @@ typedef struct print_buffer
 {
 	char buf[1024];
 	int used;
+	int flag_plus;
+	int flag_space;
+	int flag_hash;
+	char conversion_specifier;
 } print_buffer_t;
 
 /**
@@ -46,6 +50,8 @@ int print_unsigned(va_list ap, print_buffer_t *pb);
 int print_octal(va_list ap, print_buffer_t *pb);
 int print_hex_lower(va_list ap, print_buffer_t *pb);
 int print_hex_upper(va_list ap, print_buffer_t *pb);
+int write_reversed_buffer(print_buffer_t *pb, char *buf, int size);
+int write_hex_prefix_if_needed(print_buffer_t *pb, unsigned int original_value);
 int print_string_custom_S(va_list ap, print_buffer_t *pb);
 int print_pointer(va_list ap, print_buffer_t *pb);
 

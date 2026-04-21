@@ -1,30 +1,25 @@
 #include "main.h"
 
 /**
- * write_pointer_prefix_and_null - write "0x" and handle null pointer
+ * write_pointer_nil - write "(nil)" for null pointer
  * @pb: output buffer
- * @pointer_value: pointer value cast to uintptr_t
  *
- * Return: 3 if null handled ("0x0"), 2 if only prefix written, -1 on error
+ * Return: 5 on success, -1 on error
  */
-static int write_pointer_prefix_and_null(print_buffer_t *pb,
-		uintptr_t pointer_value)
+static int write_pointer_nil(print_buffer_t *pb)
 {
-	if (pb_putc(pb, '0') < 0)
+	if (pb_putc(pb, '(') < 0)
+		return (-1);
+	if (pb_putc(pb, 'n') < 0)
+		return (-1);
+	if (pb_putc(pb, 'i') < 0)
+		return (-1);
+	if (pb_putc(pb, 'l') < 0)
+		return (-1);
+	if (pb_putc(pb, ')') < 0)
 		return (-1);
 
-	if (pb_putc(pb, 'x') < 0)
-		return (-1);
-
-	if (pointer_value == 0)
-	{
-		if (pb_putc(pb, '0') < 0)
-			return (-1);
-
-		return (3);
-	}
-
-	return (2);
+	return (5);
 }
 
 /**
@@ -76,21 +71,21 @@ static int write_pointer_hex_digits(print_buffer_t *pb,
 int print_pointer(va_list ap, print_buffer_t *pb)
 {
 	uintptr_t pointer_value;
-	int prefix_result;
 	int digits_result;
 
 	pointer_value = (uintptr_t)va_arg(ap, void *);
 
-	prefix_result = write_pointer_prefix_and_null(pb, pointer_value);
-	if (prefix_result < 0)
-		return (-1);
+	if (pointer_value == 0)
+		return (write_pointer_nil(pb));
 
-	if (prefix_result == 3)
-		return (prefix_result);
+	if (pb_putc(pb, '0') < 0)
+		return (-1);
+	if (pb_putc(pb, 'x') < 0)
+		return (-1);
 
 	digits_result = write_pointer_hex_digits(pb, pointer_value);
 	if (digits_result < 0)
 		return (-1);
 
-	return (prefix_result + digits_result);
+	return (digits_result + 2);
 }
